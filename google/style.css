@@ -38,7 +38,6 @@ body {
     padding: 0;
   } 
     
-  }
   .nav .name {
     display: none;
   }
@@ -70,13 +69,11 @@ body {
     transition: all .5s;
   }
   
-  } 
   .location {
     background-color: white;
     color: white;
   }
   
-  }
   .card:hover {
     border-color: white;
   }
@@ -116,10 +113,6 @@ body {
   /* Styles for larger screens */
   @media screen and (min-width: 720px) {
     
-    }
-  
-    header {
-      min-height: 450px;
     }
   
     .nav {
