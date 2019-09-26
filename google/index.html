@@ -1,34 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Augustin's Google</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900" rel="stylesheet"></head>
-  <body>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/google_icon.png" type="image/x-icon">
+  <title>Google</title>
+</head>
+<body>
 
-    <div class="main-nav">
-        <ul class="nav">
-          <li class="name"></li>
-          <li><a href="#">Gmail</a></li>
-          <li><a href="#">Images</a></li>
-        </ul>
+  <nav>
+    <div>Gmail</div>
+    <div>Images</div>
+    <div>Carré</div>
+    <div>A</div>
+  </nav>
+
+  <div id=main>
+    <img src="./images/logo.png" alt="Google logo">
+    <input type="search" name="search" id="search-bar">
+    <div>
+        <button class="btn-rect-gray"> Recherche Google </button>
+        <button class="btn-rect-gray"> J'ai de la chance </button>
+    </div>
+    <a href="https://learndigital.withgoogle.com/ateliersnumeriques?">Profitez de la rentrée pour vous former avec Google</a>
+  </div>
+
+  <footer>
+  
+    <div class="footer-country">France</div>
+    <div class="foot">
+        <div id="footer-left">
+            <ul>
+              <li>Publicité</li>
+              <li>Entreprise</li>
+              <li>À propos</li>
+              <li>Comment fonctionne la recherche Google</li>
+            </ul>
+          </div>
+          <div id="footer-right">
+            <ul>
+              <li>Infos consommateurs</li>
+              <li>Confidentialité</li>
+              <li>Conditions</li>
+              <li>Paramètres</li>
+            </ul>
+          </div>
     </div>
 
 
-    <header>
-      <img src="images/me.jpg" alt="Drawing of me" class="profile-image">
-        <form action="/search" id="f" method="get"><div id="hf">
-    </header>
-</div><div class="init" id="fkbx"><div id="fkbx-text">Rechercher sur Google ou saisir une URL</div><input id="q" aria-hidden="true" autocomplete="off" name="q" tabindex="3" type="url" jsaction="mousedown:ntp.fkbxclk"><div id="fkbx_crt"></div><div id="fkbx-spch" tabindex="0"></div><div id="fkbx-hspch" tabindex="0"></div><div id="fkbx-hht">Dites "Ok Google"</div>
-    <main class="flex">
-        
-      </div> 
+  </footer>
 
-    </main>
-    <footer>
-      <p class="copyright">Copyright 2019, Augustin DE LOUVENCOURT - THP</p>
-    </footer>
-  </body>
-  </html>
+</body>
+</html>
