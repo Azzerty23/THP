@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* border: 5px solid gray;
+    box-sizing: border-box; */
+ }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    display: inline;
+    list-style: none;
+}
+
+/* div {
+    border: 1px solid red;
+} */
+
+nav {
+    font-family: arial,sans-serif;
+    font-size: 13px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin: 20px;
+}
+
+nav div {
+    padding: 5px;
+}
+
+#main {
+    height: 250px;
+    padding: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#signIn {
+    position: relative;
+    top: -9px;
+}
+
+#search-bar {
+    height: 46px;
+    width: 584px;
+    margin: 18px;
+    border: 1px solid rgba(170, 170, 170, 0.5);
+    border-radius: 30px;
+    /* box-shadow: 10px gray; */
+    /* transition: all 0.1s cubic-bezier(.25,.25,.25,.25); */
+    text-decoration:none;
+    outline:none;
+}
+     
+#search-bar:hover {
+    box-shadow: 0 1px 3px rgba(110, 110, 110, 0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.link-learn {
+    font-size: small;
+}
+
+.btn-rect-gray {
+    outline:0;
+    height: 36px;
+    line-height: 27px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    margin: 10px;
+    border-style:none;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+    color: rgb(88, 88, 88);
+    margin: 11px 4px;
+    padding: 0 16px;
+}
+
+.btn-rect-gray:focus {
+    outline:0;
+}
+
+footer {
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: flex-end; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    color: rgba(0,0,0,.54);
+    background-color: #f2f2f2;
+    }
+
+div #footer-right {
+    padding-right: 41px;
+}
+
+.foot {
+    display: flex;
+    padding:0;
+    justify-content: space-between;
+    color: #5f6368;
+}
+
+.footer-country {
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    padding-left: 41px;
+    /* height: 42; */
+}
