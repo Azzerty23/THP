@@ -1,7 +1,12 @@
 def signup
-    puts "Enregistre un mot de passe (tâche de t'en souvenir) :"
+    puts "Enregistre un nouveau mot de passe (tâche de t'en souvenir) :"
     print "> "
     pwd = gets.chomp
+    while pwd == "" do 
+        puts "Renseigne un mot de passe valide"
+        print "> "
+        pwd = gets.chomp
+    end
     return pwd
 end
 
