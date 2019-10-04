@@ -32,14 +32,16 @@ def remove_smallest(array)
   for a in array
     if a != smallest
       new_array << a
-    else
+    elsif a == smallest and number > 1 and i == 0
       i += 1
-      if i != 0
-        new_array << a
-      end
+    elsif a == smallest and number > 1 and i > 0
+      i += 1
+      new_array << a
+    elsif a == smallest and number == 1
+      i += 1
     end
   end
-  return print new_array
+  return new_array
 end
 
-remove_smallest([2, 2, 1, 2, 1])
+print remove_smallest([1, 2, 3, 4, 5])
