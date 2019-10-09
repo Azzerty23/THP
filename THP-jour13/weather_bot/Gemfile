@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'dotenv'
+gem 'pry'
+# gem 'openweather2'
+gem 'open-weather'

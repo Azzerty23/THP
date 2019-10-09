@@ -1,0 +1,1 @@
+See http://rwarbelow.github.io/ruby-and-apis/openweathermap-api for improvements
