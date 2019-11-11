@@ -1,0 +1,262 @@
+/***********************/
+/* 	     GENERAL       */
+/***********************/
+
+body {
+    margin: 10;
+    background-color: #FFF;
+    /* background-color: #E9FFEA; */
+}
+
+.border {
+    border: 2px solid rgb(27, 27, 27);
+}
+
+* {
+    color: #588B8B;
+}
+
+/**************************/
+/* 	     CONTAINERS       */
+/**************************/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: space-between; */
+    justify-content: center;
+}
+.container-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5px 20px 0 20px;
+    padding: 10px;
+}
+
+.container-column:hover {
+    box-shadow: -3px 5px 15px 1px rgba(0,0,0,0.8);
+}
+
+.sticker + p {
+    text-align: center;
+}
+
+.sticker {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    border-radius: 4px;
+    flex: 1 1 100px;
+    padding: 25px 45px;
+}
+
+.sticker:hover {
+    box-shadow: -3px 5px 15px 1px rgba(0,0,0,0.8);
+}
+
+/************************/
+/* 	    COULEURS        */
+/************************/
+
+/* background */
+
+.primary {
+    background-color: #588B8B;
+}
+
+.secondary {
+    background-color: #FFF;
+}
+
+.third {
+    background-color: #FFD5C2;
+}
+
+.dark {
+    background-color: rgb(27, 27, 27);
+}
+
+.medium-light {
+    background-color: rgb(61, 61, 61);
+}
+
+.light {
+    background-color: rgba(177, 177, 177);
+}
+
+.warning {
+    background-color: #F28F3B;
+}
+
+.danger {
+    background-color: #C8553D;
+}
+
+.success {
+    background-color: rgb(8, 161, 90);
+}
+
+.info {
+    background-color: #588B8B;
+}
+
+/* text */
+
+.text-primary {
+    color: #588B8B;
+}
+
+.text-secondary {
+    color: #FFF;
+}
+
+.text-third {
+    color: #FFD5C2;
+}
+
+.text-dark {
+    color :rgb(27, 27, 27);
+}
+
+.text-medium-light {
+    color: rgb(61, 61, 61);
+}
+
+.text-light {
+    color: rgba(177, 177, 177);
+}
+
+.text-warning {
+    color: #F28F3B;
+}
+
+.text-danger {
+    color: #C8553D;
+}
+
+.text-success {
+    color: rgb(8, 161, 90);
+}
+
+.text-info {
+    color: #588B8B;
+}
+
+
+/************************/
+/* 	  La typographie    */
+/************************/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+p, lead, ul, ol, li, button {
+    font-family: 'Roboto', sans-serif;
+    max-width: 600px;
+}
+
+lead {
+    box-shadow: -3px 5px 15px 1px rgba(0,0,0,0.8);
+    border-radius: 4px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+blockquote {
+    padding-left: 50px;
+    font-style: italic;
+    border-radius: 4px;
+    background: #588B8B;;
+    color: #FFD5C2;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+ul li::before {
+    content: "@ "; 
+    color: red
+}
+
+ol {
+    counter-reset: li
+}
+
+ol li::before {
+    content: counter(li); 
+    color: red;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em
+}
+
+ol li {
+    counter-increment: li;
+}
+
+li:hover {
+    padding-left: 10px;
+}
+
+
+/***********************/
+/* 	   Les boutons     */
+/***********************/
+
+/* Normaux */
+
+button {
+    min-width: 50 px;
+    min-height: 50 px;
+}
+
+button:active {
+    color: none;
+}
+
+/* Outline */
+
+/* Petits et grands */
+
+
+/************************/
+/* 	  L'iconographie    */
+/************************/
+
+
+/***********************************/
+/*                                 */
+/* 	  Des inputs de formulaires    */
+/*                                 */
+/***********************************/
+
+/* input */
+
+/* select */
+
+/* option */
+
+/* textarea */
+
+/* radio buttons */
+
+/* checkboxes */
+
+
+/************************/
+/* 	    Des cartes      */
+/************************/
+
+
+
+/************************/
+/* 	    Des listes      */
+/************************/

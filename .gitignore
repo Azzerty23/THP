@@ -1,3 +1,5 @@
 .DS_Store
 .env
 THP-jour25/airbnb/tmp/*
+*.log
+THP-jour25/airbnb/log/development.log
