@@ -1,0 +1,82 @@
+<% content_for :title, @event.title %>
+
+<div class="card text-center bg-light">
+  <div class="card-header">
+    <% if current_user != nil %>
+      <% if current_user.id == @event.administrator_id%>
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="btn btn-info" href="<%= edit_event_path(@event.id) %>">Modifier</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="<%= attendance_path(@event.id) %>">Gérer</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-light" href="<%= event_path %>" data-confirm="Êtes-vous sûr ?" data-method="DELETE">Supprimer</a>
+          </li>
+        </ul>
+      <%end%>
+    <%end%>
+    
+    <div class="container">
+
+      <div class="row d-flex">
+
+        <div class="col-md-8">
+           <% if @event.image.attached?%>
+            <%= image_tag @event.image, alt: 'image', class:"img-fluid", size: "1000" %>
+          <% end %>
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3"><strong><em><%= @event.title %> <i class="fab fa-angellist"></i></em></strong></h3>
+          <p><%= @event.description %></p>
+          <ul>
+            <strong><%= @event.start_date.strftime("%d-%m-%Y %H:%M") %></strong><br>
+            <h6 class="card-text">(Fini le <%= @event.end_date.strftime("%d-%m-%Y à %H:%M") %>)</h6>
+            <a><%= @event.attendances.count %> participants<a><br>
+            <a>Prix : <%= @event.price %> €<a><br><br>
+            <h5 class="card-text">Montpellier</h5>
+            <h6 class="card-text">Situé à <%= @event.location %></h6>
+            <a>Organisateur : <%= @event.administrator.firstname%> <%= @event.administrator.lastname %><a><br>
+            <a>Contact : <%= @event.administrator.email %><a><br>
+
+          </ul>
+              <%= flash[:success] %>
+          <% if current_user != nil %>
+            <% @attendance = @event.attendances.find { |attendance| attendance.user_id == current_user.id} %>
+            <% if current_user.id == @event.administrator_id %>
+              <%= link_to "Gérer l'événement", attendance_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
+            <% elsif @attendance != nil %>
+              <%= link_to 'Je ne participe plus', @attendance, method: :delete, :class => 'btn btn-sm btn-outline-dark ml-1' %>
+            <% else %>
+              <%= link_to 'Je participe', new_attendance_charge_path(@event.id), :class => 'btn btn-sm btn-dark ml-1' %>
+            <% end %>
+          <% else %>
+            <%= link_to 'Se connecter pour partiper', new_user_session_url, :class => 'btn btn-sm btn-outline-dark' %>
+          <% end %>
+        </div>
+
+      </div>
+
+      <h3 class="my-4">Évenements associés</h3>
+
+      <div class="row">
+
+        <% 4.times do %>
+          <% event = @events.sample %>
+          <div class="col-md-3 col-sm-6 mb-4">
+            <a href=<% link_to event_path(event.id) %> >
+              <% if event.image.attached?%>
+                <%= image_tag event.image, alt: 'image', class:"img-fluid", size: "200" %>
+              <% end %>            
+            </a>
+          </div>
+        <% end %>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<% if @event.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+    <p>Nous n'avons pas réussi à créer l'évenement pour la (ou les) raison(s) suivante(s) :</p>
+    <ul>
+        <% @event.errors.full_messages.each do |message| %>
+        <li> <%= message %> </li>
+        <% end %>
+    </ul>
+    </div>
+<% end %>
+
+<%= form_with model: @event, local: true, multipart: true, class: 'mt-5 col-4 offset-4' do |f| %>
+    <div class= 'form-group'>
+        <label> Date de début </label>
+        <%= f.datetime_local_field :start_date, class: 'form-control', value: Time.now.localtime.strftime("%Y-%m-%dT%H:%M"), placeholder: 'Date de début' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Durée </label>
+        <%= f.number_field :duration, min: 30, step: 5, class: 'form-control', value: 30, placeholder: 'Durée en minutes' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Titre </label>
+        <%= f.text_field :title, class: 'form-control', placeholder: 'Nom de ton évenement' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Description </label>
+        <%= f.text_area :description, size: '20x2', class: 'form-control align-middle', placeholder: 'Décris ton événement le mieux possible pour attirer du monde' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Prix </label>
+        <%= f.number_field :price, in: 0..1000, step: 1, class: 'form-control align-middle', placeholder: "...€" %>
+    </div>
+    <div class= 'form-group'>
+        <label> Adresse </label>
+        <%= f.text_area :location, size: '20x2', class: 'form-control align-middle', placeholder: "Indique l'adresse" %>
+    </div>
+    <div class= 'form-group'>
+        <label> Image </label>
+        <%= f.file_field :image, size: '20x2', class: 'form-control align-middle', placeholder: "Upload une image" %>
+    </div>
+    <div class= 'form-group'>
+        <%= f.hidden_field :administrator_id, value: current_user.id %>
+    </div>
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>
