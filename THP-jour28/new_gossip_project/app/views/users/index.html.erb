@@ -1,0 +1,16 @@
+<h1>Users</h1>
+
+  <div class="card-columns">
+    <% @users.each do |user| %>
+      <div class="card border-light m-3">
+        <div class="card-header"><%= link_to(user) do %> <%= user.firstname %> <%= user.lastname %> <% end %> - <%= user.email %> 
+        </div>
+        <div class="card-body text-dark">
+          <h5 class="card-title"><%= user.city.name %></h5>
+          <% if user.gossips.count > 0 %>
+          <p class="card-text font-weight-light font-italic"> <strong> Last gossip : </strong> <%= user.gossips.last.content %> <small> <%= user.gossips.last.created_at.strftime('%d/%m/%Y %H:%M:%S') %> </small> </p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>

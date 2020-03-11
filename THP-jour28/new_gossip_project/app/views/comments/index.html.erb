@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <p>
+  <%= @gossip.title %> - <%= @gossip.content %>
+  </p>
+
+  <tbody>
+    <% @gossip.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.commenter.firstname %> <%= comment.commenter.lastname %> </td>
+        <td><%= comment.created_at.strftime('%d/%m/%Y %H:%M:%S') %> </td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

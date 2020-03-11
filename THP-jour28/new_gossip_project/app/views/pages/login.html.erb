@@ -1,0 +1,62 @@
+ <% if flash[:danger] %>
+<div class="alert alert-danger d-flex justify-content-center"> 
+    <%= flash[:danger] %>
+</div>
+<% end %> 
+
+ <% if flash[:success] %>
+<div class="alert alert-success d-flex justify-content-center"> 
+    <%= flash[:success] %>
+</div>
+<% end %> 
+
+
+<div class="container">
+    <div class="row">
+
+
+<%= form_with url: sessions_path, html: {class: "mt-5 col-lg-3 offset-lg-1"} do |f| %>
+    <label class= 'form-group h1'> Log in </label>
+    <div class= 'form-group'>
+        <label> Email </label>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+    </div>
+    <div class= 'form-group'>
+        <label> Password </label>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+    </div>
+    <%= f.submit 'Log in', class: 'btn btn-primary' %>
+<% end %>
+
+
+<%= form_with model: User, class: "mt-5 col-lg-4 offset-lg-2" do |f| %>
+    <label class= 'form-group h1'> Sign in </label>
+    <div class= "form-group">
+        <label> Firstname </label>
+        <%= f.text_field :firstname, class: "form-control" %>
+    </div>
+    <div class= "form-group">
+        <label> Lastname </label>
+        <%= f.text_field :lastname, class: "form-control" %>
+    </div>
+    <div class= "form-group">
+        <label> Email </label>
+        <%= f.email_field :email, class: "form-control", placeholder: "email" %>
+    </div>
+    <div class= "form-group">
+        <label> Password </label>
+        <%= f.password_field :password, size: '20x2', class: "form-control align-middle" %>
+    </div>
+    <div class= "form-group">
+        <label> Confirm you password </label>
+        <%= f.password_field :confirm, size: '20x2', class: "form-control align-middle" %>
+    </div>
+    <div class= "form-group">
+        <label> City </label>
+        <%= select(:user, :city_id, City.pluck(:name, :id), class: "form-control") %>
+    </div>
+    <%= f.submit 'Sign in', class: 'btn btn-primary' %>
+<% end %>
+
+    </div>
+</div> 

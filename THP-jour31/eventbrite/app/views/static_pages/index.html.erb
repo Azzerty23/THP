@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h1 class="display-4"><strong>Eventbrite</strong> <i class="fas fa-calendar-day"></i></h1><br>
+  <p class="lead"></i> Tous les évenements de Montpellier à portée de mains ! </p>
+</div>
+
+<% if current_user != nil %> 
+  <div class="alert alert-info" role="alert">
+  <%=flash[:success]%>
+  <h3>Bienvenue <%= current_user.firstname %> <i class="fas fa-cocktail"></i></h3>
+  </div>
+<%else%>
+  <div class="alert alert-info" role="alert"><br>
+    <%= flash[:danger] %>
+    <p>Vous n'êtes pas connecté !<br>
+    <a class="btn btn-primary" href="<%= new_user_session_path %>">Se connecter</a> | <a class="btn btn-secondary" href="<%= new_user_registration_path %>">S'inscrire</a><br><br>
+  </div>
+<% end %>
+<hr>
+<div class="row">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" src="https://ourbucketlistlives.co.uk/wp-content/uploads/2019/06/yorkshiresummer-750x450.png" alt="">
+      </div>
+      <div class="col-lg-6">
+        <h2>À propos de Eventbrite <i class="fas fa-calendar-day"></i></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+        <h3><a class="btn btn-primary" href="<%= events_path %>">Voir tout les évenements</a> <a class="btn btn-info" href="<%= new_event_path %>">Proposer un évenement</a></h3>
+      </div>
+    </div>
+
+<% if user_signed_in? %>
+    <%= link_to "Secret page", static_pages_secret_path %>
+<% end %><br><br>
+

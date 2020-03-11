@@ -1,0 +1,11 @@
+<%= render "shared/navbar" %>
+<br>
+<h4>Voici le gossip n°<%=@gossip.id%> :</h4><br>
+<strong>-  Nom de l'auteur :</strong><br>
+<ul><%= @gossip.author.first_name %> | <%= link_to "Voir", user_id_path(@gossip.author.id)%></ul>
+<strong>-  Titre du gossip :</strong><br>
+<ul><%= @gossip.title %></ul>
+<strong>- Le gossip :</strong><br>
+<ul><%= @gossip.content %></ul>
+<strong>-  Date de création :</strong><br>
+<ul><%= @gossip.created_at.strftime("%d/%m/%Y %H:%M:%S") %><br></ul>

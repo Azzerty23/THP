@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+
+
+    <div class="col-3">
+     
+      <div class="card">
+        <div class="card-header">
+          <h1>Liste des emails :<br>
+          <a type="button" class="btn btn-primary receive_email" href="email" data-method="POST" data-remote="true">Recevoir un email</a>
+          <a type="button" class="btn btn-danger" href="destroy_all" data-remote="true">Tout supprimer</a>
+          </h1>
+        </div><br>
+          <ul id="list-email">
+            <% @emails.sort.each do |email| %>
+              <li id="list-email-<%= email.id %>" > <a href="email/<%= email.id %>" data-method="GET" data-remote="true" style="font-weight:<%= email.read ? 'normal' : 'bold' %>"> Object : <%= email.object %> </a>
+              <a href="email/<%= email.id %>" data-method="DELETE" data-remote="true"><i class="fas fa-trash-alt float-right"></i></a> 
+              <br> <hr>
+              </li>
+            <% end %>
+          </ul>
+      </div>
+
+    </div>
+
+    <div class="col-9">
+
+      <div class="card">
+        <div class="card-header">
+          <h1>Email sélectionné :</h1>
+        </div><br>
+          <ul id="email-selected" >
+          </ul>
+      </div>
+
+    </div>

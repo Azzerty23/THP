@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="m-4 text-center">
+    <h1>Le site de référence en matière de ragots</h1>
+
+    <h3> Donne-nous ton <a href="/gossips/new/">nouveau potin</a> ! </h3>
+
+    <p>Voici la liste de tous les potins : </p>
+    <% gossips.each_with_index do |gossip, index| %>
+        <p>
+          <a href="/gossips/<%= index %>"> Gossip <%= index + 1 %> </a> <br/>
+          Auteur : <%= gossip.author %> <br/>
+          Contenu : <%= gossip.content %> <br/>
+        </p>
+      <% end %>
+
+  </body>
+</html>

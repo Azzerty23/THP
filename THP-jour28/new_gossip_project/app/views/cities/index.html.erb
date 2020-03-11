@@ -1,0 +1,18 @@
+<h1>Cities</h1>
+
+
+<div class="card-columns">
+  <% @cities.each do |city| %>
+  <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> <%= city.name %> </h5>
+        <p class="card-text"> <%= city.gossips.count %> gossips | <%= pluralize(city.users.count, 'user') %> </p>
+        <footer class="blockquote-footer">
+          <small class="text-muted">
+            <strong>En voir plus</strong> <cite title="Détails"> <%= link_to 'Show', city %> </cite>
+          </small>
+        </footer>
+      </div>
+  </div>
+  <% end %>
+</div>

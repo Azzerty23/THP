@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body class="m-4">
+    <h1 class="text-center">PAGE POTIN</h1>
+
+    
+<h2 class="text-center"> Voici la page du potin <%= params["id"].to_i + 1 %> <h2>
+<h3 class="text-center"> Son auteur : <%= gossip.author %> </h3>
+<h3 class="text-center"> Le contenu du potin : <%= gossip.content %> </h3>
+
+<p class="text-center"> <a href="/gossips/<%= params["id"]%>/edit">Éditer ce potin</a> </p>
+<p class="text-center"> <a href="/welcome">Retour à la page des potins</a> </p>
+
+<h3> Commentaires : </h3>
+
+    <% comments.each do |comment| %>
+        <% if comment.gossip_id == params["id"] %>
+            <p>
+            <b> <%= comment.author %> </b> - <%= comment.content %> <br/>
+            </p>
+        <% end %>
+      <% end %>
+
+<br/>
+
+<h3> Ajouter un commentaire : </h3>
+
+    <form action='/gossips/<%= params["id"]%>' method='POST'>
+      Saisi ici ton nom :  <input type='text' name='comment_author'/><br/>
+      Balance ton com' : <input type='text' name='comment_content'/><br/>
+      <input type='submit'/>
+    </form>
+
+
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<% if flash[:success] %>
+  <div class="alert alert-success d-flex justify-content-center"> 
+      <%= flash[:success] %>
+  </div>
+<% end %>
+
+<% unless current_user %>
+  <h1 class="d-flex justify-content-center">Welcome !</h1>
+  <h2 class="d-flex justify-content-center text-primary">Connecte toi pour participer et partager tes potins en exclusivité avec tes amis !</h2>
+  <br><br>
+  <h4>Derniers potins publics</h4>
+  <br>
+
+<% else %>
+    <h3 class="d-flex justify-content-center m-5"> <%= link_to 'Create a new Gossip', new_gossip_path %> </h3>
+    <h4 class="d-flex justify-content-center">Here is the last gossips : <h4>
+  </div>
+<% end %>
+
+  <div class="card-columns">
+    <% @gossips.visible.each do |gossip| %>
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"> <%= gossip.title %> </h5>
+          <p class="card-text"> <%= gossip.content %> </p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              <strong><%= gossip.author.firstname %> <%= gossip.author.lastname %></strong> <cite title="Détails du gossip"><%= link_to "voir détails", gossip_path(gossip) %></cite>
+            </small>
+          </footer>
+        </div>
+    </div>
+    <% end %>
+  </div>
+
+<%
+=begin%>
+ <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Author</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gossips.visible.each do |gossip| %>
+      <tr>
+        <td><%= gossip.title %></td>
+        <td><%= gossip.content %></td>
+        <td><%= gossip.author.firstname %> <%= gossip.author.lastname %></td>
+        <td><%= link_to 'Show', gossip %></td>
+        <td><%= link_to 'Edit', edit_gossip_path(gossip) %></td>
+        <td><%= link_to 'Destroy', gossip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+<%
+=end%>

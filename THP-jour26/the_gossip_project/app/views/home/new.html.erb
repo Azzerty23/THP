@@ -1,0 +1,14 @@
+<%= render "shared/navbar" %>
+
+<html>
+  <body><br>
+    <h2>Crée un potin !</h2>
+    <p>Balance ton potin via le formulaire ci-dessous :</p> 
+    <form action='/new_gossips' method='POST'>
+      - Saisis ici ton nom :<br>  <input type='text' placeholder='nom' name='gossip_author'/><br>
+      - Donne un titre à ton potin :<br>  <input type='text' placeholder='titre' name='gossip_title'/><br>
+      - Balance ton potin :<br> <input type='text' placeholder='contenu'  name='gossip_content'/><br><br>
+      <input type='submit'/>
+    </form><br/>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+
+<%= form_with model: Gossip, class: "mt-5 col-lg-4 offset-lg-4" do |f| %>
+  <label> Title </label>
+  <%= f.text_field :title, class: "form-control" %>
+  <label> Content </label>
+  <%= f.text_area :content, size: "60x12", class: "form-control" %>
+  <%= f.submit "send", class: 'btn btn-primary' %>
+<% end %>

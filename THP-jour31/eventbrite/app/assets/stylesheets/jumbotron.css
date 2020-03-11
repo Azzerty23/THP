@@ -1,0 +1,7 @@
+.jumbotron {
+  margin-top: -60px;
+  height: 250px;
+  text-align: center;
+  background-image: url(/assets/mtp.jpg);
+  background-size: cover;
+}

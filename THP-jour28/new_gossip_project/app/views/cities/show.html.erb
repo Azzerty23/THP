@@ -1,0 +1,11 @@
+<h1> <%= @city.name %> </h1>
+
+<h2> Il y a déjà <%= @city.users.count %> fidèles commères à <%= @city.name %> </h2>
+<br>
+<h2> Voici les <%= pluralize(@city.gossips.count, 'gossip') %> de <%= @city.name %> : </h2>
+
+<ul>
+<% @city.gossips.each do |gossip| %>
+    <li> <strong> <%= gossip.title %> </strong> : <%= gossip.content %> - <%= gossip.author.firstname %> </li>
+<% end %>
+</ul>
