@@ -1,0 +1,13 @@
+{
+  <!-- Edition de l élément désiré -->
+  let updatedTask = document.getElementById("<%= @task.id %>");
+  console.log("*************")
+  console.log(updatedTask)
+  console.log("*************")
+  let updatedStatus = updatedTask.getElementById("status");
+  updatedStatus.innerHTML = "<%= !@task.status %>";
+  updatedStatus.style.opacity = "0.5";
+
+  <!-- Affiche le flash de réussite -->
+  document.getElementsByClassName("notice")[0].textContent = "<%= flash[:notice] %>";
+}

@@ -1,0 +1,8 @@
+{
+  <!-- Suppression de l élément désiré -->
+  let removedTask = document.getElementById("<%= @task.id %>");
+  removedTask.parentNode.removeChild(removedTask);
+
+  <!-- Affiche le flash de réussite -->
+  document.getElementsByClassName("notice")[0].textContent = "<%= flash[:notice] %>";
+}

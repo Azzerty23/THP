@@ -1,0 +1,29 @@
+{
+  <!-- Définit la catégorie qui nous intéresse -->
+  let createdTaskCategory = "<%= @category.title%>";
+
+  <!-- Sélectionne le premier élement <ul> de la page index - c est la liste des catégories  -->
+  let categoriesList = document.getElementById("tasks-list");
+  let categories = categoriesList.getElementsByTagName("li");
+  
+
+  <!-- Parcourt les catégories jusqu à trouver la bonne -->
+  let correctCategory ="";
+
+  for (let i = 0; i < categories.length; i++) {
+    if (categories[i].textContent === createdTaskCategory) {
+      correctCategory = categories[i];
+      break;
+    }
+  }
+
+  <!-- Se déplace dans la liste correspondant à la bonne catégorie -->
+  let correctCategoryTasksList = correctCategory.nextElementSibling.getElementsByTagName("ul")[0];
+
+  <!-- Ajoute la nouvelle tâche à la fin de sa catégorie -->
+  correctCategoryTasksList.insertAdjacentHTML("beforeend", " <li><%= @task.title %><%=', to read:' + @task.deadline.strftime('%D') if @task.deadline %> </li>");
+
+
+  <!-- Affiche le flash de réussite -->
+  document.getElementsByClassName("notice")[0].textContent = "<%= flash[:notice] %>";
+}
